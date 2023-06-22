@@ -178,23 +178,14 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/parallax.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        var button = document.getElementById('myButton');
-        button.addEventListener('click', function() {
-          // Perform your actions here when the button is clicked
-          alert('Button clicked!');
-        });
-      });
-    </script>
 <script>
-  // Add mouseover function
+  // Add mouseover and click functions
   $(document).ready(function() {
-    $('.tm-welcome-text').mouseover(function() {
+    $('.tm-brand-name').mouseover(function() {
       $(this).css({
         'background-color': 'black', // Change the background color to a muted dark gray
         'transition': 'background-color 0.3s', // Add smooth transition animation
-        'border-radius': '26px' // Add rounded corners
+        'border-radius': '0px' // Add rounded corners
       });
     }).mouseout(function() {
       $(this).css({
@@ -203,7 +194,24 @@
         'border-radius': '' // Reset the border-radius property
       });
     });
+
+   // Add keypress function
+    $(document).keypress(function(event) {
+      if (event.which === 13) { // Check if the Enter key is pressed (key code 13)
+        alert('Вы подписаны!');
+        // Add your desired actions for the Enter key press event
+      }
+    });
   });
 </script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var button = document.getElementById('myButton');
+        button.addEventListener('click', function() {
+          // Perform your actions here when the button is clicked
+          alert('Вы подписаны!');
+        });
+      });
+    </script>
   </body>
 </html>
