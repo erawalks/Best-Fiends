@@ -986,6 +986,7 @@ textarea.form-control {
   table{
   float: right;
   padding-bottom: 15px;
+  border: 1;
 }
 #customers {
   font-family: Arial, Helvetica, sans-serif;
