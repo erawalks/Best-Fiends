@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>ВНЕ КАДРА</title>
+
+    <audio preload="auto" src="softy.m4a" loop="true" autobuffer>
+    </audio>
+    
+    <script>
+    function setCookie(c_name,value,exdays)
+    {
+        var exdate=new Date();
+        exdate.setDate(exdate.getDate() + exdays);
+        var c_value=escape(value) + ((exdays==null) ? "" : "; expires="+exdate.toUTCString());
+        document.cookie=c_name + "=" + c_value;
+    }
+    function getCookie(c_name)
+    {
+        var i,x,y,ARRcookies=document.cookie.split(";");
+        for (i=0;i<ARRcookies.length;i++)
+        {
+          x=ARRcookies[i].substr(0,ARRcookies[i].indexOf("="));
+          y=ARRcookies[i].substr(ARRcookies[i].indexOf("=")+1);
+          x=x.replace(/^\s+|\s+$/g,"");
+          if (x==c_name)
+            {
+            return unescape(y);
+            }
+          }
+    }
+    
+    var song = document.getElementsByTagName('audio')[0];
+    var played = false;
+    var tillPlayed = getCookie('timePlayed');
+    function update()
+    {
+        if(!played){
+            if(tillPlayed){
+            song.currentTime = tillPlayed;
+            song.play();
+            played = true;
+            }
+            else {
+                    song.play();
+                    played = true;
+            }
+        }
+    
+        else {
+        setCookie('timePlayed', song.currentTime);
+        }
+    }
+    setInterval(update,1000);
+    </script>
+
+    <link rel="icon" href="img/favicon.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row tm-brand-row">
+        <div class="col-lg-4 col-10">
+          <div class="tm-brand-container">
+            <div class="tm-brand-texts">
+              <h1 class="text-uppercase tm-brand-name">ВНЕ КАДРА</h1>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-8 col-2 tm-nav-col">
+          <div class="tm-nav">
+            <nav class="navbar navbar-expand-lg navbar-light tm-navbar">
+              <button
+                class="navbar-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto mr-0">
+                  <li class="nav-item">
+                    <div class="tm-nav-link-highlight"></div>
+                    <a class="nav-link" href="index.html" title="Перейти на главную страницу">Главная</a>
+                  </li>
+                  <li class="nav-item">
+                    <div class="tm-nav-link-highlight"></div>
+                    <a class="nav-link" href="about.html" title="Ознакомиться с нашим проектом">Проект</a>
+                  </li>
+                  <li class="nav-item">
+                    <div class="tm-nav-link-highlight"></div>
+                    <a class="nav-link" href="gallery.html" title="Ознакомиться с нашими курсами">Курсы</a>
+                  </li>
+                  <li class="nav-item active">
+                    <div class="tm-nav-link-highlight"></div>
+                    <a class="nav-link" href="contact.html">Контакты <span class="sr-only">(current)</span></a>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+
+      <div id="loader">
+        <div class="spinner"></div>
+      </div>
+
+
+      <div class="row tm-welcome-row">
+        <div class="col-12 tm-page-cols-container">
+          <div class="tm-page-col-left tm-welcome-box tm-bg-gradient">
+            <p class="tm-welcome-text">
+              <em
+                >"ВНЕ КАДРА вы сможете воплотить свои самые смелые и творческие идеи и погрузиться в увлекательный мир кино, где возможности становятся бесконечными."</em
+              >
+            </p>
+          </div>
+          <div class="tm-page-col-right">
+            <div
+              class="tm-welcome-parallax"
+              data-parallax="scroll"
+              data-image-src="img/contact-us.jpg"
+            ></div>
+          </div>
+        </div>
+      </div>
+
+      <section class="row tm-pt-4 tm-mb-3">
+        <div class="col-12 tm-page-cols-container">
+          <div class="tm-page-col-left">
+            <div class="tm-contact-container tm-mb-6">
+              <div class="tm-address-container">
+                <h2 class="tm-text-secondary tm-mb-6">Адрес</h2>
+                <address>
+                  <p>
+                    Астана, просп. Мангилик Ел, С0<br />
+                    Astana IT University<br />
+                    VNEKADRA 10550
+                  </p>
+                </address>
+              </div>
+
+              <div class="tm-location-container">
+                <h2 class="tm-text-secondary tm-mb-4">Локация</h2>
+                <a href="#"><img src="img/map.png" alt="Map image" class="img-fluid" /></a>
+              </div>
+            </div>
+          </div>
+          <div class="tm-page-col-right tm-form-container">
+            <h2 class="tm-text-secondary mb-4">Регистрация</h2>
+            <form
+              action="contact.html"
+              method="POST"
+              id="tm_contact_form"
+              enctype="multipart/form-data">
+              <div class="form-group">
+                <input
+                  type="text"
+                  id="contact_name"
+                  name="contact_name"
+                  class="form-control rounded-0 border-top-0 border-right-0 border-left-0"
+                  placeholder="ФИО"
+                  required="" />
+              </div>
+              <div class="form-group-2">
+                <input
+                  type="email"
+                  id="contact_email"
+                  name="contact_email"
+                  class="form-control rounded-0 border-top-0 border-right-0 border-left-0"
+                  placeholder="Ваш E-mail"
+                  required="" />
+              </div>
+              <div class="form-group-2">
+                <input
+                  type="text"
+                  id="contact_phone"
+                  name="contact_phone"
+                  class="form-control rounded-0 border-top-0 border-right-0 border-left-0"
+                  placeholder="Ваш номер телефона"
+                  required pattern="8\d{10}">
+              </div>
+              <div class="form-group-2 input-field">
+                <select class="tm-select" name="occupation" id="occupation">
+                  <option value="select">Желаемая специальность</option>
+                  <option value="CE">Актёрское мастерство</option>
+                  <option value="SA">Режиссура и сценарная работа</option>
+                  <option value="PM">Композиция и операторская работа</option>
+                  <option value="WD">Монтаж и видеография</option>
+                </select>
+              </div>
+              <div class="form-group tm-choices-container tm-text-secondary">
+                <label class="tm-w-50">
+                  <input
+                    type="radio"
+                    class="with-gap"
+                    name="gender"
+                    value="male" />
+                  <span>Мужской</span>
+                </label>
+
+                <label class="tm-w-50">
+                  <input
+                    type="radio"
+                    class="with-gap"
+                    name="gender"
+                    value="female" />
+                  <span>Женский</span>
+                </label>
+              </div>
+
+              <div class="tm-mb-5">
+                <textarea
+                  rows="10"
+                  id="contact_message"
+                  name="contact_message"
+                  class="form-control rounded-0"
+                  placeholder="Дополнительно"
+                  required=""></textarea>
+              </div>
+
+              <div class="tm-mb-4 tm-choices-container tm-text-secondary">
+                <label class="tm-w-50">
+                  <input
+                    type="checkbox"
+                    name="ckb[]"
+                    class="filled-in"
+                    value="1" />
+                  <span>Уведомлять о новостях из сферы кино</span>
+                </label>
+                <label class="tm-w-50">
+                  <input
+                    type="checkbox"
+                    name="ckb[]"
+                    class="filled-in"
+                    value="2" />
+                  <span>Уведомлять о появлении новых курсов</span>
+                </label>
+              </div>
+              <div class="tm-mb-6 file-upload-container">
+                <input
+                  id="file_name_label"
+                  type="text"
+                  class="border-top-0 border-right-0 border-left-0"
+                  placeholder="Ваше портфолио"
+                  disabled />
+                <label class="btn btn-outline btn-file">
+                  Файл...
+                  <input
+                    type="file"
+                    name="file_to_upload"
+                    style="display: none;" />
+                </label>
+              </div>
+
+              <div class="">
+                <button
+                  type="submit"
+                  class="btn btn-secondary tm-btn-submit rounded-0">
+                  Отправить
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- Call to Action -->
+      <section class="row" id="tmCallToAction">
+        <div class="col-12 tm-page-cols-container tm-call-to-action-col">
+          <div class="tm-page-col-right">
+            <div class="tm-call-to-action-box">
+              <i class="fas fa-3x fa-rss-square tm-call-to-action-icon"></i>
+              <div class="tm-call-to-action-text">
+                <h3 class="tm-call-to-action-title">
+                  Следите за новостями:
+                </h3>
+                <p class="tm-call-to-action-description">
+                  Наш проект постоянно изменяется и улучшается, поэтому будем рады уведомлять вас о каждом нововведении и новостях из мира кино!
+                </p>
+                <form action="#" method="GET" class="tm-call-to-action-form">
+                  <input type="email" name="email" placeholder="E-mail" class="tm-email-input" required />
+                  <button type="submit" class="btn btn-primary" id="myButton">
+                    Подписаться
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
+      <!-- Page footer -->
+      <footer class="row tm-page-footer">
+        <p class="col-12 tm-copyright-text mb-0">
+          Copyright &copy; 2023 ВНЕ КАДРА... Designed by Rakhymzhanova A., Bagdatuly D., Akhmediyarov R.
+          <a href="https://www.instagram.com/vne.kadra_cinema/?igshid=YmMyMTA2M2Y%3D" rel="nofollow" class="tm-copyright-link">ВНЕ КАДРА</a>
+        </p>
+      </footer>
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/parallax.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+      $(document).on("change", ":file", function() {
+        var input = $(this),
+          numFiles = input.get(0).files ? input.get(0).files.length : 1,
+          label = input
+            .val()
+            .replace(/\\/g, "/")
+            .replace(/.*\//, "");
+        input.trigger("fileselect", [numFiles, label]);
+      });
+
+      $(document).ready(function() {
+        $(":file").on("fileselect", function(event, numFiles, label) {
+          $("#file_name_label").attr("placeholder", label);
+        });
+      });
+    </script>
+    <script>
+      // Add mouseover and click functions
+      $(document).ready(function() {
+        $('.tm-brand-name').mouseover(function() {
+          $(this).css({
+            'background-color': 'black', // Change the background color to a muted dark gray
+            'transition': 'background-color 0.3s', // Add smooth transition animation
+            'border-radius': '0px' // Add rounded corners
+          });
+        }).mouseout(function() {
+          $(this).css({
+            'background-color': '', // Reset the background color on mouseout
+            'transition': '', // Reset the transition property
+            'border-radius': '' // Reset the border-radius property
+          });
+        });
+    
+       // Add keypress function
+        $(document).keypress(function(event) {
+          if (event.which === 13) { // Check if the Enter key is pressed (key code 13)
+            alert('Вы подписаны!');
+            // Add your desired actions for the Enter key press event
+          }
+        });
+      });
+    </script>
+        <script>
+          document.addEventListener('DOMContentLoaded', function() {
+            var button = document.getElementById('myButton');
+            button.addEventListener('click', function() {
+              // Perform your actions here when the button is clicked
+              alert('Вы подписаны!');
+            });
+          });
+        </script>
+      </body>
+    </html>
+  </body>
+</html>
+
+<script>
+  window.addEventListener("load", function() {
+    var loader = document.getElementById("loader");
+    setTimeout(function() {
+      loader.style.display = "none";
+    }, 200);
+  });
+  </script>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var button = document.getElementById('myButton');
+      button.addEventListener('click', function() {
+  
+        alert('Thank You very much!');
+      });
+    });
+  </script>
