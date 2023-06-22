@@ -187,15 +187,23 @@
         });
       });
     </script>
-    <script>
-      // Add mouseover function
-      $(document).ready(function() {
-        $('.tm-welcome-text').mouseover(function() {
-          $(this).css('background-color', 'black'); // Change the background color on mouseover
-        }).mouseout(function() {
-          $(this).css('background-color', ''); // Reset the background color on mouseout
-        });
+<script>
+  // Add mouseover function
+  $(document).ready(function() {
+    $('.tm-welcome-text').mouseover(function() {
+      $(this).css({
+        'background-color': '#808080', // Change the background color to a muted dark gray
+        'transition': 'background-color 0.3s', // Add smooth transition animation
+        'border-radius': '26px' // Add rounded corners
       });
-    </script>
+    }).mouseout(function() {
+      $(this).css({
+        'background-color': '', // Reset the background color on mouseout
+        'transition': '', // Reset the transition property
+        'border-radius': '' // Reset the border-radius property
+      });
+    });
+  });
+</script>
   </body>
 </html>
