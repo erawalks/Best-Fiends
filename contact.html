@@ -65,8 +65,7 @@
           <div class="tm-page-col-left tm-welcome-box tm-bg-gradient">
             <p class="tm-welcome-text">
               <em
-                >"Gradient CSS BG #A0C0C0 to #669999 and right side is a
-                parallax image of our group."</em
+                >"ВНЕ КАДРА вы сможете воплотить свои самые смелые и творческие идеи и погрузиться в увлекательный мир кино, где возможности становятся бесконечными."</em
               >
             </p>
           </div>
@@ -85,24 +84,24 @@
           <div class="tm-page-col-left">
             <div class="tm-contact-container tm-mb-6">
               <div class="tm-address-container">
-                <h2 class="tm-text-secondary tm-mb-6">Address</h2>
+                <h2 class="tm-text-secondary tm-mb-6">Адрес</h2>
                 <address>
                   <p>
-                    110-330 Sed ultricies purus nec<br />
-                    Suscipit vulputate<br />
-                    Fusce a massa 10550
+                    Астана, просп. Мангилик Ел, С0<br />
+                    Astana IT University<br />
+                    VNEKADRA 10550
                   </p>
                 </address>
               </div>
 
               <div class="tm-location-container">
-                <h2 class="tm-text-secondary tm-mb-4">Location</h2>
+                <h2 class="tm-text-secondary tm-mb-4">Локация</h2>
                 <a href="#"><img src="img/map.png" alt="Map image" class="img-fluid" /></a>
               </div>
             </div>
           </div>
           <div class="tm-page-col-right tm-form-container">
-            <h2 class="tm-text-secondary mb-4">Contact Us</h2>
+            <h2 class="tm-text-secondary mb-4">Регистрация</h2>
             <form
               action="contact.html"
               method="POST"
@@ -114,7 +113,7 @@
                   id="contact_name"
                   name="contact_name"
                   class="form-control rounded-0 border-top-0 border-right-0 border-left-0"
-                  placeholder="Your Name"
+                  placeholder="ФИО"
                   required="" />
               </div>
               <div class="form-group-2">
@@ -123,16 +122,25 @@
                   id="contact_email"
                   name="contact_email"
                   class="form-control rounded-0 border-top-0 border-right-0 border-left-0"
-                  placeholder="Your Email"
+                  placeholder="Ваш E-mail"
                   required="" />
+              </div>
+              <div class="form-group-2">
+                <input
+                  type="text"
+                  id="contact_phone"
+                  name="contact_phone"
+                  class="form-control rounded-0 border-top-0 border-right-0 border-left-0"
+                  placeholder="Ваш номер телефона"
+                  required pattern="8\d{10}">
               </div>
               <div class="form-group-2 input-field">
                 <select class="tm-select" name="occupation" id="occupation">
-                  <option value="select">Your Occupation</option>
-                  <option value="CE">Chief Executive</option>
-                  <option value="SA">Software Architect</option>
-                  <option value="PM">Project Manager</option>
-                  <option value="WD">Web Developer</option>
+                  <option value="select">Желаемая специальность</option>
+                  <option value="CE">Актёрское мастерство</option>
+                  <option value="SA">Режиссура и сценарная работа</option>
+                  <option value="PM">Композиция и операторская работа</option>
+                  <option value="WD">Монтаж и видеография</option>
                 </select>
               </div>
               <div class="form-group tm-choices-container tm-text-secondary">
@@ -142,7 +150,7 @@
                     class="with-gap"
                     name="gender"
                     value="male" />
-                  <span>Male</span>
+                  <span>Мужской</span>
                 </label>
 
                 <label class="tm-w-50">
@@ -151,7 +159,7 @@
                     class="with-gap"
                     name="gender"
                     value="female" />
-                  <span>Female</span>
+                  <span>Женский</span>
                 </label>
               </div>
 
@@ -161,7 +169,7 @@
                   id="contact_message"
                   name="contact_message"
                   class="form-control rounded-0"
-                  placeholder="Your Message"
+                  placeholder="Дополнительно"
                   required=""></textarea>
               </div>
 
@@ -172,7 +180,7 @@
                     name="ckb[]"
                     class="filled-in"
                     value="1" />
-                  <span>Check Box 1</span>
+                  <span>Уведомлять о новостях из сферы кино</span>
                 </label>
                 <label class="tm-w-50">
                   <input
@@ -180,7 +188,7 @@
                     name="ckb[]"
                     class="filled-in"
                     value="2" />
-                  <span>Check Box 2</span>
+                  <span>Уведомлять о появлении новых курсов</span>
                 </label>
               </div>
               <div class="tm-mb-6 file-upload-container">
@@ -188,10 +196,10 @@
                   id="file_name_label"
                   type="text"
                   class="border-top-0 border-right-0 border-left-0"
-                  placeholder="Your file to upload"
+                  placeholder="Ваше портфолио"
                   disabled />
                 <label class="btn btn-outline btn-file">
-                  Browse...
+                  Файл...
                   <input
                     type="file"
                     name="file_to_upload"
@@ -203,7 +211,7 @@
                 <button
                   type="submit"
                   class="btn btn-secondary tm-btn-submit rounded-0">
-                  Submit
+                  Отправить
                 </button>
               </div>
             </form>
